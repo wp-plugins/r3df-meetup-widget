@@ -46,5 +46,3 @@ Initial Release
 = 1.0.1 =
 Tweaked CSS to fix hieght bug when used with title
 Updated image - cleaner copy from offical PSD
-
-== Upgrade Notice ==
