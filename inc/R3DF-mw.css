@@ -1,9 +1,9 @@
 .widget_r3dfmeetup{
 	padding:0px;
-	height:33px;
 }
 .widget_r3dfmeetup .r3dfmeetupcontainer{
-	margin-top: 3px;
+	margin-top:5px;
+	min-height:33px;
 }
 .widget_r3dfmeetup a.r3dfmeetup{
 	position:relative;

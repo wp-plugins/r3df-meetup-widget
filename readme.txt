@@ -1,7 +1,7 @@
 === R3DF Meetup Widget ===
 Contributors: r3df
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MX3FLF4YGXRLE
-Tags: widget, meetup, meetups, meetup.com
+Tags: meetup, meetups, meetup.com, widget, meetup widget
 Stable tag: 1.0.0
 Requires at least: 3.3
 Tested up to: 3.4.2
@@ -42,3 +42,9 @@ The Hard Way:
 
 = 1.0.0 =
 Initial Release
+
+= 1.0.1 =
+Tweaked CSS to fix hieght bug when used with title
+Updated image - cleaner copy from offical PSD
+
+== Upgrade Notice ==
