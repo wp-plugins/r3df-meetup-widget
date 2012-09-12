@@ -2,7 +2,7 @@
 Contributors: r3df
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MX3FLF4YGXRLE
 Tags: meetup, meetups, meetup.com, widget, meetup widget
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires at least: 3.3
 Tested up to: 3.4.2
 License: GPLv2 or later
@@ -44,5 +44,5 @@ The Hard Way:
 Initial Release
 
 = 1.0.1 =
-Tweaked CSS to fix hieght bug when used with title
-Updated image - cleaner copy from offical PSD
+1. Tweaked CSS to fix hieght bug when used with title.
+2. Updated image - cleaner copy from offical PSD.
