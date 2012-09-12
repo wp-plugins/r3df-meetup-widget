@@ -1,0 +1,34 @@
+.widget_r3dfmeetup{
+	padding:0px;
+	height:33px;
+}
+.widget_r3dfmeetup .r3dfmeetupcontainer{
+	margin-top: 3px;
+}
+.widget_r3dfmeetup a.r3dfmeetup{
+	position:relative;
+	display:inline-block;
+}
+.widget_r3dfmeetup img.r3dfmeetup{
+	padding:0;
+	border:0;
+	position:absolute;
+	top:-2px;
+}
+.widget_r3dfmeetup span.r3dfmeetup{
+	display:block;
+	padding-left:60px;
+	line-height:1.2;
+}
+.widget_r3dfmeetup span.r3dfmeetup.middle{
+	line-height:2.4;
+}
+
+/*
+.widget_r3dfmeetup a.r3dfmeetup{
+	background: transparent url("../images/meetup_logo_49.png") no-repeat;
+	min-height: 36px;
+}
+.widget_r3dfmeetup span.r3dfmeetup{
+	padding-top: 2px;
+} */
