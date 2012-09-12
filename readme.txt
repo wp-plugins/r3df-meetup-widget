@@ -41,3 +41,4 @@ The Hard Way:
 == Changelog ==
 
 = 1.0.0 =
+Initial Release
