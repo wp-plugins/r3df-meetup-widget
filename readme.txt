@@ -2,7 +2,7 @@
 Contributors: r3df
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MX3FLF4YGXRLE
 Tags: meetup, meetups, meetup.com, widget, meetup widget
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires at least: 3.3
 Tested up to: 3.4.2
 License: GPLv2 or later
@@ -13,19 +13,20 @@ A simple widget for displaying a link to a meetup.com group.
 == Description ==
 A simple widget for use with a [Meetup.com](http://meetup.com) group.  The plugin adds a widget that shows a link to your meetup group.
 
-Simply enter your meetup group name and it's url and save.
+Simply enter your meetup group name and it's url and save.  You can display the widget with or without a title.
 
 
 == Installation ==
-The Easy Way:
+The easy way:
 
-1. To install this plugin use the "install" feature from the WordPress site.
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Use the Widget panel to place and configure this widget in a sidebar
+1. To install this plugin, click on "Add New" on the plugins page in your WordPress dashboard.
+2. Search for "R3DF Meetup Widget", click install when it's found.
+3. Activate the plugin through the 'Plugins' menu in WordPress.
+4. Use the Widget panel to place and configure this widget in a sidebar.
 
-The Hard Way:
+The hard way:
 
-1. Download and unzip the latest release R3DF_meetup_widget.zip from wordpress.org
+1. Download the latest R3DF_meetup_widget.zip from wordpress.org
 2. Upload R3DF_meetup_widget.zip to the `/wp-content/plugins/` folder on your web server
 3. Uncompress R3DF_meetup_widget.zip (delete R3DF_meetup_widget.zip after it's uncompressed)
 4. Activate the plugin through the 'Plugins' menu in WordPress
@@ -46,3 +47,6 @@ Initial Release
 = 1.0.1 =
 1. Tweaked CSS to fix hieght bug when used with title.
 2. Updated image - cleaner copy from offical PSD.
+
+= 1.0.2 =
+1. Added uninstall routine to remove saved settings.
