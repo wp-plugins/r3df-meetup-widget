@@ -2,7 +2,7 @@
 Contributors: r3df
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MX3FLF4YGXRLE
 Tags: meetup, meetups, meetup.com, widget, meetup widget
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Requires at least: 3.3
 Tested up to: 3.4.2
 License: GPLv2 or later
@@ -40,6 +40,10 @@ The hard way:
 
 
 == Changelog ==
+
+= 1.0.4 =
+1. CSS tweak
+2. Removed more captals in file names
 
 = 1.0.3 =
 1. Changed to PHP5 __contruct.

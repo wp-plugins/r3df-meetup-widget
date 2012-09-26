@@ -3,7 +3,7 @@
 Plugin Name: 	R3DF Meetup Widget
 Description:	Displays meetup group link in a widget
 Plugin URI:		http://r3df.com/
-Version: 		1.0.3
+Version: 		1.0.4
 Author:         R3DF
 Author URI:     http://r3df.com/
 Author email:   plugin-support@r3df.com
@@ -39,7 +39,7 @@ class widget_r3dfmeetup extends WP_Widget {
 		// load plugin css
 		// TODO: can we figure out if widget is actually being displayed?
 		if ( is_active_widget( false, false, $this->id_base, true ) ) {
-			if ( file_exists( __DIR__ . '/inc/R3DF-mw.css' )) {
+			if ( file_exists( __DIR__ . '/inc/r3df-mw.css' )) {
 				add_action('wp_enqueue_scripts', array(get_class($this), 'add_style'), 1025);
 			}
 		}
@@ -70,16 +70,16 @@ class widget_r3dfmeetup extends WP_Widget {
 		$url = esc_attr($instance['url']);
 		$middle = $instance['middle'] ? 'checked="checked"' : '';
         ?>
-            <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'R3DF-mw'); ?>
+            <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'r3df-mw'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 			</label></p>
-            <p><label for="<?php echo $this->get_field_id('display_text'); ?>"><?php _e('Text to display:', 'R3DF-mw'); ?>
+            <p><label for="<?php echo $this->get_field_id('display_text'); ?>"><?php _e('Text to display:', 'r3df-mw'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('display_text'); ?>" name="<?php echo $this->get_field_name('display_text'); ?>" type="text" value="<?php echo $display_text; ?>" />
 			</label></p>
-			<p><label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('URL:', 'R3DF-mw'); ?>
+			<p><label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('URL:', 'r3df-mw'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
 			</label></p>
-			<p><input class="checkbox" type="checkbox" <?php echo $middle; ?> id="<?php echo $this->get_field_id('middle'); ?>" name="<?php echo $this->get_field_name('middle'); ?>" /> <label for="<?php echo $this->get_field_id('middle'); ?>"><?php _e('Postion text in middle vertically', 'R3DF-mw'); ?></label></p>
+			<p><input class="checkbox" type="checkbox" <?php echo $middle; ?> id="<?php echo $this->get_field_id('middle'); ?>" name="<?php echo $this->get_field_name('middle'); ?>" /> <label for="<?php echo $this->get_field_id('middle'); ?>"><?php _e('Postion text in middle vertically', 'r3df-mw'); ?></label></p>
        <?php 
     }
 	
@@ -96,15 +96,15 @@ class widget_r3dfmeetup extends WP_Widget {
 	
 	// Language file loader
 	function text_domain() {
-		// load language files - files must be R3DF-mw-xx_XX.mo
-		load_plugin_textdomain( 'R3DF-mw', false, dirname(plugin_basename(__FILE__)) . '/lang');
+		// load language files - files must be r3df-mw-xx_XX.mo
+		load_plugin_textdomain( 'r3df-mw', false, dirname(plugin_basename(__FILE__)) . '/lang');
 	}
 	
 	// Style Sheet loader
 	function add_style() {
         $plugin = get_file_data( __FILE__, array('Version' => 'Version') );
-		wp_register_style('R3DF-mw', plugins_url('inc/R3DF-mw.css', __FILE__), false, $plugin['Version'] );
-		wp_enqueue_style('R3DF-mw');
+		wp_register_style('r3df-mw', plugins_url('inc/r3df-mw.css', __FILE__), false, $plugin['Version'] );
+		wp_enqueue_style('r3df-mw');
 	}
 }
 add_action('widgets_init', create_function('', 'return register_widget("widget_r3dfmeetup");'));
