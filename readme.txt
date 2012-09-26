@@ -2,7 +2,7 @@
 Contributors: r3df
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MX3FLF4YGXRLE
 Tags: meetup, meetups, meetup.com, widget, meetup widget
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires at least: 3.3
 Tested up to: 3.4.2
 License: GPLv2 or later
@@ -40,6 +40,10 @@ The hard way:
 
 
 == Changelog ==
+
+= 1.0.3 =
+1. Changed to PHP5 __contruct.
+2. Removed captals in file name
 
 = 1.0.2 =
 1. Added uninstall routine to remove saved settings.
