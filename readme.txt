@@ -43,11 +43,11 @@ The hard way:
 
 = 1.0.4 =
 1. CSS tweak
-2. Removed more captals in file names
+2. Removed more capitals in file names
 
 = 1.0.3 =
 1. Changed to PHP5 __contruct.
-2. Removed captals in file name
+2. Removed capitals in file name
 
 = 1.0.2 =
 1. Added uninstall routine to remove saved settings.
