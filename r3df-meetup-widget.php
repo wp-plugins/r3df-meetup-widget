@@ -3,7 +3,7 @@
 Plugin Name: 	R3DF Meetup Widget
 Description:	Displays meetup group link in a widget
 Plugin URI:		http://r3df.com/
-Version: 		1.0.4
+Version: 		1.0.5
 Author:         R3DF
 Author URI:     http://r3df.com/
 Author email:   plugin-support@r3df.com
@@ -109,4 +109,3 @@ class widget_r3dfmeetup extends WP_Widget {
 }
 add_action('widgets_init', create_function('', 'return register_widget("widget_r3dfmeetup");'));
 
-?>
