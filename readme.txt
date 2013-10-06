@@ -2,9 +2,9 @@
 Contributors: r3df
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MX3FLF4YGXRLE
 Tags: meetup, meetups, meetup.com, widget, meetup widget
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 Requires at least: 3.3
-Tested up to: 3.6.1
+Tested up to: 3.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,9 +26,9 @@ The easy way:
 
 The hard way:
 
-1. Download the latest R3DF_meetup_widget.zip from wordpress.org
-2. Upload R3DF_meetup_widget.zip to the `/wp-content/plugins/` folder on your web server
-3. Uncompress R3DF_meetup_widget.zip (delete R3DF_meetup_widget.zip after it's uncompressed)
+1. Download the latest r3df_meetup_widget.zip from wordpress.org
+2. Upload r3df_meetup_widget.zip to the `/wp-content/plugins/` folder on your web server
+3. Uncompress r3df_meetup_widget.zip (delete r3df_meetup_widget.zip after it's uncompressed)
 4. Activate the plugin through the 'Plugins' menu in WordPress
 5. Use the Widget panel to place and configure this widget in a sidebar
 
@@ -40,6 +40,11 @@ The hard way:
 
 
 == Changelog ==
+
+= 1.0.6 =
+1. Updated constructor
+2. Updated some code to current WP conventions
+3. Added code comments
 
 = 1.0.5 =
 1. Removed closing ?>
