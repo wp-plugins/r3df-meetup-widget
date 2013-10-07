@@ -2,7 +2,7 @@
 Contributors: r3df
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MX3FLF4YGXRLE
 Tags: meetup, meetups, meetup.com, widget, meetup widget
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 Requires at least: 3.3
 Tested up to: 3.6.1
 License: GPLv2 or later
@@ -40,6 +40,10 @@ The hard way:
 
 
 == Changelog ==
+
+= 1.0.7 =
+1. Reverted register_widget call to 1.0.5 version, anonymous functions are PHP 5.3+ only, WP still supports 5.2
+2. Adjusted CSS to fix rendering bug in FireFox
 
 = 1.0.6 =
 1. Updated constructor
