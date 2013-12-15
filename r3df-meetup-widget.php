@@ -3,7 +3,7 @@
 Plugin Name: 	R3DF Meetup Widget
 Description:	Displays meetup group link in a widget
 Plugin URI:		http://r3df.com/
-Version: 		1.0.7
+Version: 		1.0.8
 Author:         R3DF
 Author URI:     http://r3df.com/
 Author email:   plugin-support@r3df.com
@@ -69,13 +69,25 @@ class widget_r3dfmeetup extends WP_Widget {
 			echo $before_title  . $title . $after_title;
 		}
 
+		// set target
+		switch( esc_attr($instance['target']) ) {
+			case '_blank':
+				$target = '_blank';
+				break;
+			case '_self':
+			default:
+				$target = '_self';
+				break;
+		}
+
 		// Set $middle to ' middle if it is set, or blank otherwise'
 		$middle = ! empty( $instance['middle'] ) ? ' middle' : '';
 		
+
 		// Display the provided text and link, include the meetup logo
 		?>
 		<div class="r3dfmeetupcontainer">
-			<a class="r3dfmeetup" href="<?php echo $instance['url']; ?>"><img class="r3dfmeetup" alt="Meetup" src="<?php echo plugins_url( 'images/meetup_logo_49.png', __FILE__ )?>">
+			<a class="r3dfmeetup" target="<?php echo $target; ?>" href="<?php echo $instance['url']; ?>"><img class="r3dfmeetup" alt="Meetup" src="<?php echo plugins_url( 'images/meetup_logo_49.png', __FILE__ )?>">
 			<span class="r3dfmeetup<?php echo $middle; ?>"><?php echo $instance['display_text']; ?></span></a>
 		</div>
 
@@ -90,6 +102,15 @@ class widget_r3dfmeetup extends WP_Widget {
         $title = esc_attr($instance['title']);
         $display_text = esc_attr($instance['display_text']);
 		$url = esc_attr($instance['url']);
+		switch( esc_attr($instance['target']) ) {
+			case '_blank':
+				$target = '_blank';
+				break;
+			case '_self':
+			default:
+				$target = '_self';
+				break;
+		}
 		$middle = $instance['middle'] ? 'checked="checked"' : '';
 
 		// HTML for widget display in admin
@@ -109,6 +130,14 @@ class widget_r3dfmeetup extends WP_Widget {
 			<input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
 			</label></p>
 
+			<!-- Target input box -->
+			<p><label for="<?php echo $this->get_field_id('target'); ?>"><?php _e('Open Meetup page in:', 'r3df-mw'); ?></label>
+			<select id="<?php echo $this->get_field_id( 'target' ); ?>" name="<?php echo $this->get_field_name( 'target' ); ?>" class="widefat">
+				<option value="<?php echo '_self' ?>"<?php selected( $target, '_self' ); ?>>Same window</option>
+				<option value="<?php echo '_blank' ?>"<?php selected( $target, '_blank' ); ?>>New window</option>
+			</select>
+			</p>
+
 			<!-- Middle selector checkbox -->
 			<p><input class="checkbox" type="checkbox" <?php echo $middle; ?> id="<?php echo $this->get_field_id('middle'); ?>" name="<?php echo $this->get_field_name('middle'); ?>" /> <label for="<?php echo $this->get_field_id('middle'); ?>"><?php _e('Postion text in middle vertically', 'r3df-mw'); ?></label></p>
        <?php 
@@ -125,7 +154,16 @@ class widget_r3dfmeetup extends WP_Widget {
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['display_text'] = strip_tags($new_instance['display_text']);
 		$instance['url'] = strip_tags($new_instance['url']);
-		
+		// make sure target is one of the allowed values
+		switch( esc_attr($new_instance['target']) ) {
+			case '_blank':
+				$instance['target'] = '_blank';
+				break;
+			case '_self':
+			default:
+				$instance['target'] = '_self';
+				break;
+		}
 		// make sure middle is a sane value if it is set.
 		$instance['middle'] = $new_instance['middle'] ? 1 : 0;
 
