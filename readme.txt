@@ -18,7 +18,6 @@ Simply enter your Meetup group name and it's URL and save.  You can display the 
 **Support**
 
 Support for this plugin is limited to fixing _confirmed bugs_ and improving the plugin with enhancements that can be reasonably accommodated.
-There is no _User Support_ provided for this plugin. If you are having trouble with this plugin in your particular installation of WordPress, we will not be able to help you troubleshoot the problem.
 
 This plugin is provided under the terms of the GPL, which includes the following passage:
 
