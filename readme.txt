@@ -2,9 +2,9 @@
 Contributors: r3df
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MX3FLF4YGXRLE
 Tags: meetup, meetups, meetup.com, widget, meetup widget
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 Requires at least: 3.3
-Tested up to: 3.8
+Tested up to: 4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,18 +18,6 @@ Simply enter your Meetup group name and it's URL and save.  You can display the 
 **Support**
 
 Support for this plugin is limited to fixing _confirmed bugs_ and improving the plugin with enhancements that can be reasonably accommodated.
-
-This plugin is provided under the terms of the GPL, which includes the following passage:
-
-> BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
-> FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
-> OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
-> PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
-> OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-> MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS
-> TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE
-> PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,
-> REPAIR OR CORRECTION.
 
 == Installation ==
 The easy way:
@@ -55,6 +43,9 @@ The hard way:
 
 
 == Changelog ==
+
+= 1.0.9 =
+1. Readme edits, and update supported versions to 4.0.
 
 = 1.0.8 =
 1. Added option to launch meetup link in a new window.

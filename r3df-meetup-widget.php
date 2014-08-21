@@ -1,16 +1,16 @@
 <?php
 /*
-Plugin Name: 	R3DF Meetup Widget
+Plugin Name: 	R3DF - Meetup Widget
 Description:	Displays meetup group link in a widget
 Plugin URI:		http://r3df.com/
-Version: 		1.0.8
+Version: 		1.0.9
 Author:         R3DF
 Author URI:     http://r3df.com/
 Author email:   plugin-support@r3df.com
 Copyright: 		R-Cubed Design Forge
 */
 
-/*  Copyright 2012  R-Cubed Design Forge
+/*  Copyright 2012-2014  R-Cubed Design Forge
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -24,6 +24,7 @@ Copyright: 		R-Cubed Design Forge
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+    
 */
 
 // Class definition, creates a widget using the WordPress widget class
