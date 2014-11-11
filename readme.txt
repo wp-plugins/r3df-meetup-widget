@@ -2,7 +2,7 @@
 Contributors: r3df
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MX3FLF4YGXRLE
 Tags: meetup, meetups, meetup.com, widget, meetup widget
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 Requires at least: 3.3
 Tested up to: 4.0
 License: GPLv2 or later
@@ -43,6 +43,10 @@ The hard way:
 
 
 == Changelog ==
+
+= 1.0.10 =
+1. Added check to form parameters to verify they were set, unset parameters caused php error in some rare cases.
+2. Changed text domain to plugin slug & added text domain header item.
 
 = 1.0.9 =
 1. Readme edits, and update supported versions to 4.0.

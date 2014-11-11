@@ -3,7 +3,8 @@
 Plugin Name: 	R3DF - Meetup Widget
 Description:	Displays meetup group link in a widget
 Plugin URI:		http://r3df.com/
-Version: 		1.0.9
+Version: 		1.0.10
+Text Domain:	r3df-meetup-widget
 Author:         R3DF
 Author URI:     http://r3df.com/
 Author email:   plugin-support@r3df.com
@@ -36,9 +37,9 @@ class widget_r3dfmeetup extends WP_Widget {
 		// Define the widget: ID, name and description
 		parent::__construct(
 			'r3dfmeetup', // Base ID
-			__('R3DF: Meetup Group Widget', 'r3df-mw'), // Name
+			__('R3DF: Meetup Widget', 'r3df-meetup-widget'), // Name
 			array(
-				'description' => __( 'Displays Meetup group link in a widget.', 'r3df-mw' ),
+				'description' => __( 'Displays Meetup group link in a widget.', 'r3df-meetup-widget' ),
 			) // Args
 		);
 		
@@ -99,40 +100,45 @@ class widget_r3dfmeetup extends WP_Widget {
 	
 	// Displays the widget options in the WordPress admin
 	function form($instance) {
-		// strip (clean) any saved values (from the database, passed in $instance), set them to variables in the function 
-        $title = esc_attr($instance['title']);
-        $display_text = esc_attr($instance['display_text']);
-		$url = esc_attr($instance['url']);
-		switch( esc_attr($instance['target']) ) {
-			case '_blank':
-				$target = '_blank';
-				break;
-			case '_self':
-			default:
-				$target = '_self';
-				break;
+		// check that parameters are set and strip (clean) any saved values (from the database, passed in $instance)
+		// set them to variables used in the form 
+ 		$title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+ 		$display_text = isset( $instance['display_text'] ) ? esc_attr( $instance['display_text'] ) : '';
+ 		$url = isset( $instance['url'] ) ? esc_attr( $instance['url'] ) : '';
+		$target = '_self'; 		
+		if ( isset( $instance['target'] ) ){
+			switch( esc_attr($instance['target']) ) {
+				case '_blank':
+					$target = '_blank';
+					break;
+				case '_self':
+				default:
+					$target = '_self';
+					break;
+			}
 		}
-		$middle = $instance['middle'] ? 'checked="checked"' : '';
+
+		$middle = ( isset( $instance['middle'] ) &&  $instance['middle'] ) ? 'checked="checked"' : '';
 
 		// HTML for widget display in admin
         ?>
             <!-- Title input box -->
-            <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'r3df-mw'); ?>
+            <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'r3df-meetup-widget'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 			</label></p>
 
 			<!-- Display text input box -->
-            <p><label for="<?php echo $this->get_field_id('display_text'); ?>"><?php _e('Text to display:', 'r3df-mw'); ?>
+            <p><label for="<?php echo $this->get_field_id('display_text'); ?>"><?php _e('Text to display:', 'r3df-meetup-widget'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('display_text'); ?>" name="<?php echo $this->get_field_name('display_text'); ?>" type="text" value="<?php echo $display_text; ?>" />
 			</label></p>
 
 			<!-- URL input box -->
-			<p><label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('URL:', 'r3df-mw'); ?>
+			<p><label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('URL:', 'r3df-meetup-widget'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
 			</label></p>
 
 			<!-- Target input box -->
-			<p><label for="<?php echo $this->get_field_id('target'); ?>"><?php _e('Open Meetup page in:', 'r3df-mw'); ?></label>
+			<p><label for="<?php echo $this->get_field_id('target'); ?>"><?php _e('Open Meetup page in:', 'r3df-meetup-widget'); ?></label>
 			<select id="<?php echo $this->get_field_id( 'target' ); ?>" name="<?php echo $this->get_field_name( 'target' ); ?>" class="widefat">
 				<option value="<?php echo '_self' ?>"<?php selected( $target, '_self' ); ?>>Same window</option>
 				<option value="<?php echo '_blank' ?>"<?php selected( $target, '_blank' ); ?>>New window</option>
@@ -140,7 +146,7 @@ class widget_r3dfmeetup extends WP_Widget {
 			</p>
 
 			<!-- Middle selector checkbox -->
-			<p><input class="checkbox" type="checkbox" <?php echo $middle; ?> id="<?php echo $this->get_field_id('middle'); ?>" name="<?php echo $this->get_field_name('middle'); ?>" /> <label for="<?php echo $this->get_field_id('middle'); ?>"><?php _e('Postion text in middle vertically', 'r3df-mw'); ?></label></p>
+			<p><input class="checkbox" type="checkbox" <?php echo $middle; ?> id="<?php echo $this->get_field_id('middle'); ?>" name="<?php echo $this->get_field_name('middle'); ?>" /> <label for="<?php echo $this->get_field_id('middle'); ?>"><?php _e('Postion text in middle vertically', 'r3df-meetup-widget'); ?></label></p>
        <?php 
     }
 	
@@ -173,8 +179,8 @@ class widget_r3dfmeetup extends WP_Widget {
 	
 	// Language file loader
 	function text_domain() {
-		// Load language files - files must be r3df-mw-xx_XX.mo
-		load_plugin_textdomain( 'r3df-mw', false, dirname(plugin_basename(__FILE__)) . '/lang');
+		// Load language files - files must be r3df-meetup-widget-xx_XX.mo
+		load_plugin_textdomain( 'r3df-meetup-widget', false, dirname(plugin_basename(__FILE__)) . '/lang');
 	}
 	
 	// Style Sheet loader
